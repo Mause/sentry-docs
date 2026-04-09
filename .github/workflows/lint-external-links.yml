@@ -40,7 +40,7 @@ jobs:
 
       - name: Restore lychee cache
         if: steps.changed.outputs.files != ''
-        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        uses: actions/cache/restore@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
         with:
           path: .lycheecache
           key: lychee-cache-
@@ -72,7 +72,7 @@ jobs:
       # - Transient errors (429, 5xx) are excluded from cache and retried
       # - Save updated cache for next run
       - name: Restore lychee cache
-        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        uses: actions/cache/restore@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
         with:
           path: .lycheecache
           key: lychee-cache-
@@ -91,7 +91,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Save lychee cache
-        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        uses: actions/cache/save@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
         if: always()
         with:
           path: .lycheecache
